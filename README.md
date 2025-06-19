@@ -28,10 +28,11 @@ https://github.com/arksine/moonraker
   Thanks to [wolfstlkr](https://www.reddit.com/r/ender3v2/comments/mdtjvk/octoprint_klipper_v2_lcd/gspae7y)
 
   `sudo apt-get install python3-pip python3-gpiozero python3-serial git`
+  
+`pip now requires a switch if the repository is not in 'apt install python3-xyz' on RPi for Bookworm`
+  `sudo pip3 install multitimer --break-system-packages`
 
-  `sudo pip3 install multitimer`
-
-  `git clone https://github.com/SuperPi911/DWIN_T5UIC1_LCD.git`
+  `git clone https://github.com/idydxu/DWIN_T5UIC1_LCD.git`
 
 
 ### Wire the display 
@@ -44,6 +45,7 @@ https://github.com/arksine/moonraker
   * Vcc =   2   (5v)
   * Gnd =   6   (GND)
 
+*Per SuperPi911's Repo
 Here's a diagram based on my color selection:
 
 <img src ="images/GPIO.png?raw=true" width="325" height="75">
@@ -62,6 +64,9 @@ I tried to take some images to help out with this: You don't have to use the col
 Enter the downloaded DWIN_T5UIC1_LCD folder.
 Make new file run.py and copy/paste in the following (pick one)
 
+To confirm the GPIO of your board, run test_gpio.py.
+`sudo python3 ./test_gpio.py`
+
 For an Ender3v2
 ```python
 #!/usr/bin/env python3
@@ -70,7 +75,7 @@ from dwinlcd import DWIN_LCD
 encoder_Pins = (26, 19)
 button_Pin = 13
 LCD_COM_Port = '/dev/ttyAMA0'
-API_Key = 'XXXXXX'
+API_Key = 'XXXXXX' #API key for Moonraker/Moonsail can be found at http://<klipper host>/access/api_key
 
 DWINLCD = DWIN_LCD(
 	LCD_COM_Port,
