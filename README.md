@@ -43,7 +43,7 @@ git clone https://github.com/idydxu/DWIN_T5UIC1_LCD.git
 
 Enter the downloaded DWIN_T5UIC1_LCD folder.
 ```
-cd /home/usr/DWIN_T5UIC1_LCD
+cd ~/DWIN_T5UIC1_LCD
 ```
 
 To confirm the GPIO of your board, run test_gpio.py.
@@ -88,7 +88,7 @@ sudo python3 ./run.py
 
 `Note: Delay of 30s after boot to allow webservices to settle.
 
-path of `run.py` is expected to be `../DWIN_T5UIC1_LCD/run.py``
+path of `run.py` is expected to be `~/DWIN_T5UIC1_LCD/run.py``
 
    ```
    sudo chmod +x run.py
