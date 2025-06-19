@@ -8,6 +8,8 @@ https://octoprint.org/
 
 https://github.com/arksine/moonraker
 
+https://github.com/raspberrypi/utils/tree/master/pinctrl
+
 
 ## Setup:
 
