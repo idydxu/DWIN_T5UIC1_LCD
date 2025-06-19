@@ -29,7 +29,7 @@ https://github.com/arksine/moonraker
 
   `sudo apt-get install python3-pip python3-gpiozero python3-serial git`
   
-`pip now requires a switch if the repository is not in 'apt install python3-xyz' on RPi for Bookworm`
+pip now requires a switch if the repository is not in 'apt install python3-xyz' on RPi for Bookworm
   `sudo pip3 install multitimer --break-system-packages`
 
   `git clone https://github.com/idydxu/DWIN_T5UIC1_LCD.git`
@@ -44,6 +44,9 @@ https://github.com/arksine/moonraker
   * B   =   GPIO26
   * Vcc =   2   (5v)
   * Gnd =   6   (GND)
+    
+To confirm the GPIO of your board, run test_gpio.py.
+`sudo python3 ./test_gpio.py`
 
 *Per SuperPi911's Repo
 Here's a diagram based on my color selection:
@@ -62,48 +65,11 @@ I tried to take some images to help out with this: You don't have to use the col
 ### Run The Code
 
 Enter the downloaded DWIN_T5UIC1_LCD folder.
-Make new file run.py and copy/paste in the following (pick one)
+`cd /home/usr/DWIN_T5UIC1_LCD`
 
-To confirm the GPIO of your board, run test_gpio.py.
-`sudo python3 ./test_gpio.py`
+Run with `sudo python3 ./run.py`
 
-For an Ender3v2
-```python
-#!/usr/bin/env python3
-from dwinlcd import DWIN_LCD
-
-encoder_Pins = (26, 19)
-button_Pin = 13
-LCD_COM_Port = '/dev/ttyAMA0'
-API_Key = 'XXXXXX' #API key for Moonraker/Moonsail can be found at http://<klipper host>/access/api_key
-
-DWINLCD = DWIN_LCD(
-	LCD_COM_Port,
-	encoder_Pins,
-	button_Pin,
-	API_Key
-)
-```
-
-If your control wheel is reversed (Voxelab Aquila) use this instead.
-```python
-#!/usr/bin/env python3
-from dwinlcd import DWIN_LCD
-
-encoder_Pins = (19, 26)
-button_Pin = 13
-LCD_COM_Port = '/dev/ttyAMA0'
-API_Key = 'XXXXXX'
-
-DWINLCD = DWIN_LCD(
-	LCD_COM_Port,
-	encoder_Pins,
-	button_Pin,
-	API_Key
-)
-```
-
-Run with `python3 ./run.py`
+`ctrl-c to exit`
 
 # Run at boot:
 
