@@ -29,8 +29,11 @@ https://github.com/arksine/moonraker
 
   `sudo apt-get install python3-pip python3-gpiozero python3-serial git`
   
-pip now requires a switch if the repository is not in 'apt install python3-xyz' on RPi for Bookworm
+  pip now requires a switch if the repository is not in 'apt install python3-xyz' on RPi for Bookworm
   `sudo pip3 install multitimer --break-system-packages`
+  
+  RPi.GPIO is depcrecated, use rpi-lgpio now, no code changes required.
+  `sudo apt install python3-rpi-lgpio`
 
   `git clone https://github.com/idydxu/DWIN_T5UIC1_LCD.git`
 
