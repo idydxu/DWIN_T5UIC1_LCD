@@ -89,9 +89,7 @@ Run with
 	
 	path of `run.py` is expected to be `/home/pi/DWIN_T5UIC1_LCD/run.py`
 
-   <code>
-   sudo chmod +x run.py
-   </code>
+   <code>   sudo chmod +x run.py   </code>
    
    <code>
    sudo chmod +x simpleLCD.service
