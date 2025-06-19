@@ -3,10 +3,10 @@
  After=multi-user.target
 
  [Service]
+ USER=
  Type=idle
  ExecStartPre=/bin/sleep 30
- ExecStart=/bin/sh -c '/usr/bin/env python3 ../DWIN_T5UIC1_LCD/run.py  > /tmp/lcd.log 2>&1'
+ ExecStart=/bin/sh -c '/usr/bin/env python3 /home/$USER/DWIN_T5UIC1_LCD/run.py'
 
  [Install]
  WantedBy=multi-user.target
-
