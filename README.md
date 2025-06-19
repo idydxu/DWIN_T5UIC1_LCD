@@ -70,9 +70,11 @@ I tried to take some images to help out with this: You don't have to use the col
 ### Run The Code
 
 Enter the downloaded DWIN_T5UIC1_LCD folder.
+
 `cd ../DWIN_T5UIC1_LCD`
 
-Run with `sudo python3 ./run.py`
+Run with 
+`sudo python3 ./run.py`
 
 `ctrl-c to exit`
 
