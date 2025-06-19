@@ -9,6 +9,7 @@ from requests.exceptions import ConnectionError
 import atexit
 import time
 import asyncio
+import os
 
 class xyze_t:
 	x = 0.0
@@ -110,7 +111,7 @@ class KlippySocket:
 		atexit.register(self.klippyExit)
 
 	def klippyExit(self):
-		print("Shuting down Klippy Socket")
+		print("Shutting down Klippy Socket")
 		self.stop_threads = True
 		self.t.join()
 
@@ -252,8 +253,11 @@ class PrinterData:
 	def __init__(self, API_Key, URL='127.0.0.1'):
 		self.op = MoonrakerSocket(URL, 80, API_Key)
 		self.status = None
+		self.uname = os.getlogin()
+		print(self.uname)
+		print(self.uname+'/printer_data/comms/klippy.sock')
 		print(self.op.base_address)
-		self.ks = KlippySocket('../printer_data/comms/klippy.sock', callback=self.klippy_callback)
+		self.ks = KlippySocket('/home/'+str(self.uname)+'/printer_data/comms/klippy.sock', callback=self.klippy_callback)
 		subscribe = {
 			"id": 4001,
 			"method": "objects/subscribe",
