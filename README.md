@@ -90,6 +90,9 @@ sudo python3 ./run.py
 
 path of `run.py` is expected to be `~/DWIN_T5UIC1_LCD/run.py``
 
+  ```
+  sudo sed -i "s/User=/User=$(whoami)/" ./simpleLCD.service
+  ```
    ```
    sudo chmod +x run.py
    ```   
