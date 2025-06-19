@@ -16,7 +16,7 @@ https://github.com/raspberrypi/utils/tree/master/pinctrl
 ### [Disable Linux serial console](https://www.raspberrypi.org/documentation/configuration/uart.md)
   By default, the primary UART is assigned to the Linux console. If you wish to use the primary UART for other purposes, you must reconfigure Raspberry Pi OS. This can be done by using raspi-config:
 
-  * Start raspi-config: `sudo raspi-config.`
+  * Start raspi-config: <code> sudo raspi-config. </code>
   * Select option 3 - Interface Options.
   * Select option P6 - Serial Port.
   * At the prompt Would you like a login shell to be accessible over serial? answer 'No'
@@ -29,15 +29,15 @@ https://github.com/raspberrypi/utils/tree/master/pinctrl
 
   Thanks to [wolfstlkr](https://www.reddit.com/r/ender3v2/comments/mdtjvk/octoprint_klipper_v2_lcd/gspae7y)
 
-  `sudo apt-get install python3-pip python3-gpiozero python3-serial git`
+  <code> sudo apt-get install python3-pip python3-gpiozero python3-serial git </code>
   
   pip now requires a switch if the repository is not in 'apt install python3-xyz' on RPi for Bookworm
-  `sudo pip3 install multitimer --break-system-packages`
+  <code> sudo pip3 install multitimer --break-system-packages </code>
   
   RPi.GPIO is depcrecated, use rpi-lgpio now, no code changes required.
-  `sudo apt install python3-rpi-lgpio`
+  <code> sudo apt install python3-rpi-lgpio </code>
 
-  `git clone https://github.com/idydxu/DWIN_T5UIC1_LCD.git`
+  <code> git clone https://github.com/idydxu/DWIN_T5UIC1_LCD.git </code>
 
 
 ### Wire the display 
@@ -51,7 +51,9 @@ https://github.com/raspberrypi/utils/tree/master/pinctrl
   * Gnd =   6   (GND)
     
 To confirm the GPIO of your board, run test_gpio.py.
-`sudo python3 ./test_gpio.py`
+<code>
+sudo python3 ./test_gpio.py
+</code>
 
 *Per SuperPi911's Repo
 Here's a diagram based on my color selection:
@@ -70,12 +72,15 @@ I tried to take some images to help out with this: You don't have to use the col
 ### Run The Code
 
 Enter the downloaded DWIN_T5UIC1_LCD folder.
-
+<code>
 `cd /home/usr/DWIN_T5UIC1_LCD`
+</code>
 
-Run with 
+Run with    
+<code>
 `sudo python3 ./run.py`
-
+</code>
+ 
 `ctrl-c to exit`
 
 # Run at boot:
@@ -84,19 +89,33 @@ Run with
 	
 	path of `run.py` is expected to be `/home/pi/DWIN_T5UIC1_LCD/run.py`
 
-   `sudo chmod +x run.py`
+   <code>
+   sudo chmod +x run.py
+   </code>
    
-   `sudo chmod +x simpleLCD.service`
+   <code>
+   sudo chmod +x simpleLCD.service
+   </code>
    
-   `sudo mv simpleLCD.service /lib/systemd/system/simpleLCD.service`
-   
-   `sudo chmod 644 /lib/systemd/system/simpleLCD.service`
-   
-   `sudo systemctl daemon-reload`
-   
-   `sudo systemctl enable simpleLCD.service`
-   
-   `sudo reboot`
+   <code>
+   sudo mv simpleLCD.service /lib/systemd/system/simpleLCD.service
+   </code>
+      
+   <code>
+   sudo chmod 644 /lib/systemd/system/simpleLCD.service
+   </code>
+      
+   <code>
+   sudo systemctl daemon-reload
+   </code>
+      
+   <code>
+   sudo systemctl enable simpleLCD.service
+   </code>
+      
+   <code>
+   sudo reboot
+   </code>
    
    
 
