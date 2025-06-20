@@ -250,12 +250,12 @@ class PrinterData:
 	SHORT_BUILD_VERSION = "1.00"
 	CORP_WEBSITE_E = "https://www.klipper3d.org/"
 
-	def __init__(self, API_Key, URL='127.0.0.1'):
+	def __init__(self, API_Key, uname, URL='127.0.0.1'):
 		self.op = MoonrakerSocket(URL, 80, API_Key)
 		self.status = None
-		self.uname = os.getlogin()
+		print(uname)
 		print(self.op.base_address)
-		self.ks = KlippySocket('/home/'+str(self.uname)+'/printer_data/comms/klippy.sock', callback=self.klippy_callback)
+		self.ks = KlippySocket('/home/'+str(uname)+'/printer_data/comms/klippy.sock', callback=self.klippy_callback)
 		subscribe = {
 			"id": 4001,
 			"method": "objects/subscribe",
