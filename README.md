@@ -4,7 +4,9 @@
 
 https://www.klipper3d.org
 
-https://octoprint.org/
+https://docs.mainsail.xyz/
+
+https://github.com/dw-0/kiauh
 
 https://github.com/arksine/moonraker
 
@@ -13,10 +15,16 @@ https://github.com/raspberrypi/utils/tree/master/pinctrl
 
 ## Setup:
 
+I installed Klipper, Moonraker and Mainsail via the Kiauh helper script. I would assume this all works with Fluidd and manual installs, the API key locations may change.
+    If you don't install a web front end like Mainsail/Fluidd, you'll need to enable the Klipper API. Reference [Klipper Docs.](https://www.klipper3d.org/API_Server.html)
+
 ### [Disable Linux serial console](https://www.raspberrypi.org/documentation/configuration/uart.md)
   By default, the primary UART is assigned to the Linux console. If you wish to use the primary UART for other purposes, you must reconfigure Raspberry Pi OS. This can be done by using raspi-config:
 
-  * Start raspi-config: <code> sudo raspi-config. </code>
+  * Start raspi-config:
+      ```
+      sudo raspi-config
+      ```
   * Select option 3 - Interface Options.
   * Select option P6 - Serial Port.
   * At the prompt Would you like a login shell to be accessible over serial? answer 'No'
@@ -29,13 +37,20 @@ https://github.com/raspberrypi/utils/tree/master/pinctrl
 
   Thanks to [wolfstlkr](https://www.reddit.com/r/ender3v2/comments/mdtjvk/octoprint_klipper_v2_lcd/gspae7y)
 
-  ``` sudo apt-get install python3-pip python3-gpiozero python3-serial git ```
+  ``` 
+  sudo apt-get install python3-pip python3-gpiozero python3-serial git
+  ```
   
-  pip now requires a switch if the repository is not in 'apt install python3-xyz' on RPi for Bookworm
-  ``` sudo pip3 install multitimer --break-system-packages ```
+  pip now requires a switch if the repository is not in 'apt install python3-xyz' on RPi for Bookworm when installing multitimer.
+    *if there is a better solution that is up to date, please let me know :)
+  ``` 
+  sudo pip3 install multitimer --break-system-packages
+  ```
   
   RPi.GPIO is depcrecated, use rpi-lgpio now, no code changes required.
-  ``` sudo apt install python3-rpi-lgpio ```
+  ``` 
+  sudo apt install python3-rpi-lgpio
+  ```
 
 ```
 git clone https://github.com/idydxu/DWIN_T5UIC1_LCD.git
