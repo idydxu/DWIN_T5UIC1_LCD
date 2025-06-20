@@ -7,7 +7,7 @@ from dwinlcd import DWIN_LCD
 if len(sys.argv)>1:
     user = str(sys.argv[1])
 else:
-    user = str(os.getlogin())
+    user = input("Enter User: ")
 
 # Change pins if you do not wire to the ReadMe
 encoder_Pins = (26, 19) # For Ender3 v2
@@ -15,7 +15,7 @@ encoder_Pins = (26, 19) # For Ender3 v2
 
 button_Pin = 13
 LCD_COM_Port = '/dev/ttyAMA0'
-API_Key = 'XXXXXX'
+API_Key = 'XXXXXX' #See readme for how to access
 
 DWINLCD = DWIN_LCD(
 	LCD_COM_Port,
