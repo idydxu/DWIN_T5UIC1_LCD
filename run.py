@@ -22,5 +22,5 @@ DWINLCD = DWIN_LCD(
 	encoder_Pins,
 	button_Pin,
 	API_Key,
-    user
+    	user
 )
