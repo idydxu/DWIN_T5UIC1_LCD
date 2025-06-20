@@ -15,8 +15,18 @@ https://github.com/raspberrypi/utils/tree/master/pinctrl
 
 ## Setup:
 
-I installed Klipper, Moonraker and Mainsail via the Kiauh helper script. I would assume this all works with Fluidd and manual installs, the API key locations may change.
-    If you don't install a web front end like Mainsail/Fluidd, you'll need to enable the Klipper API. Reference [Klipper Docs.](https://www.klipper3d.org/API_Server.html)
+I installed Klipper, Moonraker and Mainsail via the Kiauh helper script. I would assume this all works with Fluidd and manual installs, the API key locations may change. *If you don't install a web front end like Mainsail/Fluidd, you'll need to enable the Klipper API.*
+    
+Reference [Klipper Docs.](https://www.klipper3d.org/API_Server.html)
+
+You can access the Moonraker API via this shell command:
+``` 
+~/moonraker/scripts/fetch-apikey.sh
+```
+Or URL:
+```
+http://klipper.local:80/access/api_key
+```
 
 ### [Disable Linux serial console](https://www.raspberrypi.org/documentation/configuration/uart.md)
   By default, the primary UART is assigned to the Linux console. If you wish to use the primary UART for other purposes, you must reconfigure Raspberry Pi OS. This can be done by using raspi-config:
@@ -54,7 +64,7 @@ I installed Klipper, Moonraker and Mainsail via the Kiauh helper script. I would
 
 ```
 git clone https://github.com/idydxu/DWIN_T5UIC1_LCD.git
-```  
+```
 
 Enter the downloaded DWIN_T5UIC1_LCD folder.
 ```
